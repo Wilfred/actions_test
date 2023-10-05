@@ -1,6 +1,13 @@
 use std::{path::PathBuf, process::Command};
 
 fn main() {
+    let mut cpp_build = cc::Build::new();
+    cpp_build
+        .cpp(true)
+        .std("c++14")
+        .file("foobar.cc")
+        .compile("foo");
+
     commit_info();
 }
 
