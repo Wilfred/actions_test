@@ -20,6 +20,11 @@ jobs:
           # Targets that match the OS of the runner.
           - target: x86_64-unknown-linux-gnu
             os: ubuntu-20.04
+
+          # Targets using cross-compilation (upload-rust-binary-action
+          # detects that they need cross).
+          - target: x86_64-unknown-linux-musl
+            os: ubuntu-20.04
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
