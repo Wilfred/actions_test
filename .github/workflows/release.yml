@@ -1,6 +1,9 @@
 name: Release
 
-on: [push, pull_request]
+on:
+  push:
+    tags:
+      - "[0-9]+.*"
 
 jobs:
   create-release:
